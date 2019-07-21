@@ -1,0 +1,40 @@
+<div style="margin:10px;">
+  <div class="row" id="pieChart">
+
+  </div>
+
+  <div class="row marginBottom">
+    <button class="btn btn-primary" (click)="addExpense()">Add Expense</button>
+  </div>
+
+  <div class="row">
+    <span class="space" (click)="paginate('prev')">Prev</span>
+    <span style="width:30px;" (click)="paginate($event)" [ngClass]="(page=='1')?'space highline':'space'" *ngFor="let page of noOfPage">{{page}}</span>
+    <span class="space" (click)="paginate('next')">Next</span>
+  </div>
+
+  <br>
+
+  <table class="col-lg-12" *ngIf="Content.length > 0">
+    <thead>
+      <tr>
+        <th style="border:0px; background-color: white;"></th>
+        <th *ngFor="let h of Header">{{h}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let rowData of Content|slice:Start:End; let i = index" [ngClass]="rowData['Status'] ? '' : 'hasExpense'">
+        <td style="width:50px; border:0px; background-color: white;">
+          <span [attr.class]="(rowData['Status'])?'':'displayNone'">
+          <i class="fa fa-edit" style="color:blue; cursor:pointer;" (click)="edit(i, $event)"></i>
+          <i class="fa fa-trash-o" style="color:red; cursor:pointer" (click)="delete(i, $event)"></i>
+          </span>
+        </td>
+        <td>{{rowData['Category']}}</td>
+        <td>{{rowData['Item name']}}</td>
+        <td>{{rowData['Amount']}}</td>
+        <td>{{rowData['Expense date']}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

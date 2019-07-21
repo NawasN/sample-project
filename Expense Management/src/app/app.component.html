@@ -1,0 +1,30 @@
+<!-- <div class="row" style="margin:0px">
+  <div style="width:30%">
+    <div>Hello</div>
+    <div>world</div>
+  </div>
+
+  <div style="width:70%">
+      <div>Hello</div>
+  </div>
+</div>
+ -->
+<!-- <div class="col-lg-12">
+  <span class="col-lg-2">
+    side
+  </span>
+  <span class="col-lg-10">
+    Main
+  </span>
+</div> -->
+
+<div class="sidenav">
+    <a routerLink="/" class="menu active" (click)="makeActive($event)">Home</a>
+    <a routerLink="/setting" class="menu" (click)="makeActive($event)">Settings</a>
+  </div>
+  
+  <div class="main">
+      <router-outlet>
+
+        </router-outlet>
+  </div>

@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="col-lg-2"></div>
+  <div class="row" style="margin-bottom: 20px;">
+    <span class="col-lg-3">Total Budget : </span>
+    <input type="number" class="col-lg-3 marginRight" id="upDateBudget">
+    <button class="btn btn-primary col-lg-1" (click)="setValue('upDateBudget')">Update</button>
+  </div>
+
+  <div class="row" style="margin-bottom: 20px;">
+    <span class="col-lg-3">Category : </span>
+    <input type="text" class="col-lg-3 marginRight" id="addCategory">
+    <button class="btn btn-primary col-lg-1" (click)="setValue('addCategory')">Add</button>
+  </div>
+
+  <div class="categoryBox" *ngIf='category.length > 0'>
+    <ul *ngFor="let c of category"><li>{{c}}</li></ul>
+  </div>
+</div>

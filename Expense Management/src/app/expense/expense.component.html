@@ -1,0 +1,21 @@
+<div class="marginBottom">
+  <label class="col-lg-3">Category</label>
+  <select class="col-lg-3" id="category">
+    <option *ngFor="let c of category" value="{{c}}">{{c}}</option>
+  </select>
+</div>
+
+<div class="marginBottom">
+    <label class="col-lg-3">Item Name</label>
+    <input type="text" class="col-lg-3" id="itemName" >
+</div>
+
+<div class="marginBottom">
+    <label class="col-lg-3">Amount</label>
+    <input type="number" class="col-lg-3" id="amount" >
+</div>
+
+<div>
+  <button *ngIf="!editRecord" class="btn btn-primary" (click)="addExpense()">Add</button>
+  <button *ngIf="editRecord" class="btn btn-primary" (click)="saveExpense()">Save Changes</button>
+</div>
